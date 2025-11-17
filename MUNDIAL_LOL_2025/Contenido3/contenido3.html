@@ -9,6 +9,7 @@
     <link rel="icon" type="image/jpeg" href="../img/lol-worlds-1024x576.jpg.jpg" />
 
     <style>
+        
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #fdfdff;
@@ -201,6 +202,20 @@ body {
                 padding: 24px 18px 28px;
             }
         }
+
+        /* NUEVO: contenedor para la imagen de la Gran Final */
+        .old-image-wrapper {
+            margin-top: 14px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+        }
+
+        .old-image-wrapper img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -262,6 +277,12 @@ body {
                 composiciones, forzando partidas muy cerradas que mantuvieron al público al
                 borde de la silla.
             </p>
+
+            <!-- NUEVO: Imagen de la Gran Final debajo del resumen -->
+            <div class="old-image-wrapper">
+                <img src="https://image-proxy.bo3.gg/uploads/news/347935/title_image/webp-8aa2ce92caf8f374ef8cb857e664fa85.webp.webp?w=1248&h=624"
+                     alt="Gran Final del Mundial 2025 entre T1 y KT Rolster">
+            </div>
         </section>
 
         <!-- ESTADÍSTICAS EJEMPLO -->
