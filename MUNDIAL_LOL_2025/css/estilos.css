@@ -1,0 +1,284 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* =========================
+   ESTILO GLOBAL
+========================= */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fdfdff;
+
+    /* Degradado pastel + imagen Worlds de fondo */
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 243, 0.92) 0%,
+            rgba(213, 196, 255, 0.92) 40%,
+            rgba(199, 227, 255, 0.92) 100%
+        ),
+        url("../img/lol-worlds-1024x576.jpg.jpg");
+
+    background-size: cover;          /* La imagen cubre toda la pantalla */
+    background-position: center;     /* Centrada */
+    background-repeat: no-repeat;
+    background-attachment: fixed;    /* Fondo fijo al hacer scroll */
+    background-blend-mode: soft-light; /* Se mezcla suave, no tapa los bordes ni tarjetas */
+}
+
+
+
+/* Contenedor general para el contenido principal */
+.main-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+}
+
+/* Enlaces */
+a {
+    color: #ffd369;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   CABECERA / HERO
+========================= */
+
+.hero {
+    padding: 32px 16px 16px;
+}
+
+.hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Logos de la universidad y la facultad */
+.hero-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hero-logos img {
+    height: 140px;
+    border-radius: 18px;
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Título principal y subtítulo */
+.hero-title {
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* >>> AQUÍ VA EL CAMBIO IMPORTANTE (DORADO) <<< */
+.hero-title h1 {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-weight: 800;
+    color: #ffd369; /* DORADO */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    margin-bottom: 6px;
+}
+
+.hero-title h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffd369; /* DORADO TAMBIÉN */
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Línea de separación bajo el encabezado */
+.hero-divider {
+    max-width: 1100px;
+    margin: 24px auto 0;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ffd369, #ffffff, #ffd369);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   TARJETA DE DATOS DEL ESTUDIANTE
+========================= */
+
+.info-card {
+    margin: 32px auto 24px;
+    max-width: 700px;
+    background: linear-gradient(135deg, rgba(6, 11, 40, 0.96), rgba(17, 24, 63, 0.96));
+    border-radius: 20px;
+    padding: 24px 32px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+    border: 2px solid rgba(255, 211, 105, 0.6);
+}
+
+.info-card h3 {
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    color: #ffd369;
+    text-transform: uppercase;
+}
+
+.info-card p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.info-card strong {
+    color: #ffd369;
+}
+
+/* =========================
+   SECCIONES / TARJETAS GENERALES
+========================= */
+
+.section-card {
+    background: rgba(6, 11, 40, 0.92);
+    border-radius: 18px;
+    padding: 20px 24px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffd369;
+}
+
+.section-card p {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Listas dentro de las tarjetas */
+.section-card ul {
+    margin: 8px 0 0 18px;
+    padding-left: 0;
+}
+
+.section-card li {
+    margin-bottom: 4px;
+}
+
+/* =========================
+   TABLAS (para Principal, Secundarias, etc.)
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(10, 16, 50, 0.96);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+th {
+    background: linear-gradient(135deg, #ffd369, #ff9a9e);
+    color: #1b1b2f;
+    text-align: left;
+    font-weight: 700;
+}
+
+tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* =========================
+   NAVEGACIÓN ENTRE PÁGINAS
+========================= */
+
+.nav-links {
+    margin: 24px 0 8px;
+    text-align: center;
+}
+
+.nav-links a {
+    display: inline-block;
+    margin: 4px 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 211, 105, 0.7);
+    font-size: 0.9rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.nav-links a:hover {
+    background: #ffd369;
+    color: #1b1b2f;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.88;
+    padding: 12px 0 4px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .hero-logos {
+        justify-content: space-around;
+    }
+
+    .hero-logos img {
+        height: 110px;
+    }
+
+    .info-card {
+        padding: 18px 16px;
+    }
+
+    .section-card {
+        padding: 18px 16px 20px;
+    }
+}

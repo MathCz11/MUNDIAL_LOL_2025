@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Contenido 2 – Cuartos de final y Semifinales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS general -->
+    <link rel="stylesheet" href="../css/estilos.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../img/lol-worlds-1024x576.jpg.jpg" />
+
+    <!-- Estilo tipo “antiguo” (igual que Contenido 1) -->
+    <style>
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fdfdff;
+
+    /* Fondo pastel + imagen Worlds de fondo */
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 243, 0.92) 0%,
+            rgba(213, 196, 255, 0.92) 40%,
+            rgba(199, 227, 255, 0.92) 100%
+        ),
+        url("../img/lol-worlds-1024x576.jpg.jpg");
+
+    background-size: cover;          /* La imagen cubre toda la pantalla */
+    background-position: center;     /* Centrada */
+    background-repeat: no-repeat;
+    background-attachment: fixed;    /* Fondo fijo al hacer scroll */
+    background-blend-mode: soft-light; /* La imagen no tapa los colores de tus tarjetas */
+}
+
+
+        .old-main {
+            max-width: 1100px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+        }
+
+        .old-card {
+            background: #160b33;
+            border-radius: 32px;
+            border: 3px solid #f2c558;
+            box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55);
+            padding: 32px 34px 38px;
+        }
+
+        .old-header-subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ffd978;
+            margin-bottom: 4px;
+        }
+
+        .old-header-title {
+            font-size: clamp(2rem, 3.3vw, 2.8rem);
+            font-weight: 800;
+            margin: 0 0 6px;
+        }
+
+        .old-header-desc {
+            margin: 0 0 18px;
+            color: #f4e8ff;
+        }
+
+        .old-nav-links {
+            margin-bottom: 24px;
+        }
+
+        .old-nav-links a {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #ffd978;
+            text-decoration: none;
+        }
+
+        .old-nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .old-section {
+            background: linear-gradient(135deg, #ff9ec4, #fdd3ff);
+            border-radius: 24px;
+            padding: 22px 24px 24px;
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+            color: #1b1025;
+            margin-bottom: 22px;
+        }
+
+        .old-section h2 {
+            margin: 0 0 14px;
+            text-align: center;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #ff3da6;
+        }
+
+        .old-section p {
+            margin: 0 0 10px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .video-wrapper {
+            margin-top: 12px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 3px solid #f2c558;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 360px;
+            display: block;
+        }
+
+        .table-wrapper {
+            margin-top: 10px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+        }
+
+        .table-wrapper table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #15102a;
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        .table-wrapper thead {
+            background: #241a4b;
+        }
+
+        .table-wrapper th,
+        .table-wrapper td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .table-wrapper th {
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .table-wrapper tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .table-wrapper tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .audio-wrapper {
+            margin-top: 10px;
+            border-radius: 18px;
+            padding: 12px 14px;
+            background: #171322;
+        }
+
+        .audio-wrapper audio {
+            width: 100%;
+        }
+
+        .old-bottom-nav {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .old-bottom-nav a {
+            display: inline-block;
+            margin: 4px 6px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff9ec4, #fdd3ff);
+            color: #2b1539;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+        }
+
+        .old-bottom-nav a:hover {
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+        }
+
+        .site-footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #3c2956;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .old-card {
+                padding: 24px 18px 28px;
+            }
+
+            .video-wrapper iframe {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body class="theme-antiguo">
+<main class="old-main">
+    <section class="old-card">
+        <header>
+            <p class="old-header-subtitle">Mundial de League of Legends 2025</p>
+            <h1 class="old-header-title">Contenido 2 – Cuartos de final y Semifinales</h1>
+            <p class="old-header-desc">
+                Análisis de las series eliminatorias y el camino hacia la Gran Final del Mundial 2025.
+            </p>
+
+            <nav class="old-nav-links">
+                <a href="../Presentacion/presentacion.html">Presentación</a>
+                <a href="../Principal/principal.html">Página principal</a>
+                <a href="../Contenido1/contenido1.html">Contenido 1</a>
+                <a href="../Contenido2/contenido2.html"><b>Contenido 2</b></a>
+                <a href="../Contenido3/contenido3.html">Contenido 3</a>
+                <a href="../Fuentes/fuentes.html">Fuentes</a>
+            </nav>
+        </header>
+
+        <!-- VIDEO -->
+        <section class="old-section">
+            <h2>🎮 Video: Resumen de cuartos y semifinales</h2>
+            <p>
+                En este video se muestran los mejores momentos de los <b>cuartos de final</b> y
+                las <b>semifinales</b> del Mundial 2025, incluyendo jugadas destacadas,
+                remontadas y decisiones clave que definieron a los finalistas.
+            </p>
+
+            <div class="video-wrapper">
+                <!-- Puedes cambiar el enlace por otro que prefieras -->
+                <iframe
+                    src="https://www.youtube.com/embed/gwSdWVN-Ffg"
+                    title="Highlights cuartos y semifinales Worlds 2025"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- CUARTOS DE FINAL -->
+        <section class="old-section">
+            <h2>⚔️ Cuartos de final</h2>
+            <p>
+                Los <b>cuartos de final</b> reunieron a los ocho mejores equipos del torneo.
+                Cada serie al mejor de cinco partidas (Bo5) estuvo marcada por estrategias
+                muy diferentes: composiciones orientadas al juego temprano, escalado a juego
+                tardío y selecciones sorpresa para intentar descolocar al rival.
+            </p>
+            <p>
+                En esta etapa se definieron los primeros favoritos al título. Equipos como
+                <b>T1</b> y <b>KT Rolster</b> demostraron una gran solidez macro, controlando
+                objetivos como dragones, heraldos y Barón Nashor para cerrar las partidas con
+                ventaja. Otros conjuntos, aunque quedaron eliminados, dejaron series muy
+                reñidas que pasaron a la historia por su intensidad.
+            </p>
+        </section>
+
+        <!-- SEMIFINALES + TABLA -->
+        <section class="old-section">
+            <h2>⭐ Camino a las Semifinales</h2>
+            <p>
+                Las <b>semifinales</b> enfrentaron a los cuatro mejores equipos del Mundial 2025.
+                Cada serie determinó al finalista que tendría la oportunidad de levantar la
+                <i>Summoner's Cup</i>. A continuación, se muestra un ejemplo de cómo pudieron
+                quedar los resultados de esta fase:
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Serie</th>
+                            <th>Equipos</th>
+                            <th>Marcador</th>
+                            <th>Clasificado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Semifinal 1</td>
+                            <td>T1 vs JDG</td>
+                            <td>3 – 1</td>
+                            <td>T1</td>
+                        </tr>
+                        <tr>
+                            <td>Semifinal 2</td>
+                            <td>KT Rolster vs GEN.G</td>
+                            <td>3 – 2</td>
+                            <td>KT Rolster</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                Ambas series mostraron un nivel altísimo de coordinación en peleas de equipo,
+                creatividad en las selecciones de campeones y adaptación constante a los
+                parches competitivos del juego.
+            </p>
+        </section>
+
+        <!-- AUDIO -->
+        <section class="old-section">
+            <h2>🎧 </h2>
+            <p>
+                Reproductor de audio relacionado con los cuartos de final y las semifinales del
+                torneo.
+            </p>
+
+            <div class="audio-wrapper">
+                <audio controls>
+                    <source src="../audio/contenido2.mp3" type="audio/mpeg" />
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+        </section>
+
+        <!-- NAV INFERIOR -->
+        <div class="old-bottom-nav">
+            <a href="../Contenido1/contenido1.html">⬅ Volver al Contenido 1</a>
+            <a href="../Contenido3/contenido3.html">Ir al Contenido 3 ➜</a>
+            <a href="../Principal/principal.html">Volver a la página principal</a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    Universidad Nacional de la Amazonía Peruana · FISI ·
+    Portal web temático: Mundial de League of Legends 2025
+</footer>
+</body>
+</html>

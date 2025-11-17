@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación - Mundial de League of Legends 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon (usa tu imagen del Worlds) -->
+    <link rel="icon" type="image/jpeg" href="../img/lol-worlds-1024x576.jpg.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #1b1b2f;
+
+    /* Degradado + imagen del Worlds */
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(253, 231, 255, 0.92) 0%,
+            rgba(233, 241, 255, 0.92) 45%,
+            rgba(253, 231, 255, 0.92) 100%
+        ),
+        url("../img/lol-worlds-1024x576.jpg.jpg");
+
+    background-size: cover;          /* La imagen cubre toda la pantalla */
+    background-position: center;     /* Centrada */
+    background-repeat: no-repeat;
+    background-attachment: fixed;    /* Fondo fijo al hacer scroll */
+    background-blend-mode: soft-light; /* Mezcla suave, no tapa el degradado */
+}
+
+
+        a {
+            color: #004aad;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ====== HERO / PORTADA (similar al portal) ====== */
+        .hero {
+            padding: 40px 20px 60px;
+            background: linear-gradient(90deg, #ff9ec4 0%, #a457ff 45%, #4ea4ff 100%);
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            border-bottom: 4px solid #f8d36b; /* línea dorada como en el portal */
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .hero-logo {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 24px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+        }
+
+        .hero-logo img {
+            display: block;
+            max-height: 130px;
+            width: auto;
+        }
+
+        .hero-title {
+            flex: 1;
+        }
+
+        .hero-title h1 {
+            font-size: clamp(2.6rem, 4.2vw, 3.6rem);
+            font-weight: 800;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            margin-bottom: 8px;
+            color: #ffd666; /* título dorado */
+        }
+
+        .hero-title h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.35);
+            color: #ffeef5; /* subtítulo casi blanco como en el portal */
+        }
+
+        /* Tarjeta con datos del estudiante (similar al rectángulo azul del portal) */
+        .caratula-card {
+            margin: 0 auto;
+            margin-top: 20px;
+            max-width: 900px;
+            background: linear-gradient(90deg, #1a2a6c 0%, #162447 50%, #243b8f 100%);
+            border-radius: 22px;
+            padding: 26px 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+            color: #ffffff;
+        }
+
+        .caratula-card .anio {
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            margin-bottom: 18px;
+        }
+
+        .caratula-card p {
+            margin: 3px 0;
+            font-size: 0.98rem;
+        }
+
+        .caratula-card b {
+            font-weight: 700;
+        }
+
+        /* ====== CONTENIDO PRINCIPAL ====== */
+        main {
+            max-width: 1000px;
+            margin: 40px auto 60px;
+            padding: 0 20px 20px;
+        }
+
+        .box {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 24px 26px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+        }
+
+        .box h2 {
+            text-align: center;
+            margin-bottom: 14px;
+            color: #5b168c;
+            letter-spacing: 0.08em;
+        }
+
+        .box p {
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* Índice de contenidos */
+        .index-list ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .index-list li {
+            margin: 6px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .index-list li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.7rem;
+            color: #a457ff;
+            transform: translateY(3px);
+        }
+
+        /* Navegación inferior */
+        .bottom-nav {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .bottom-nav a {
+            display: inline-block;
+            margin: 0 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff9ec4, #a457ff);
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+        }
+
+        .bottom-nav a:hover {
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+        }
+
+        /* Footer pequeño */
+        footer {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .hero-top {
+                flex-direction: column;
+            }
+
+            .hero-logo img {
+                max-height: 110px;
+            }
+
+            .caratula-card {
+                padding: 20px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-inner">
+        <div class="hero-top">
+            <!-- Logo UNAP -->
+            <div class="hero-logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3po4KndLz0oS66XoEng02vF95g3ccdjH-og&s"
+                     alt="Logo UNAP">
+            </div>
+
+            <!-- Título central -->
+            <div class="hero-title">
+                <h1>🏆 Mundial de League of Legends 2025 🏆</h1>
+                <h2>Trabajo de Investigación Formativa – Portal web temático</h2>
+            </div>
+
+            <!-- Logo FISI-UNAP -->
+            <div class="hero-logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP-2WbjtxGKsN98B_50A8r_Q0xotUdOh2DFQ&s"
+                     alt="Logo FISI UNAP">
+            </div>
+        </div>
+
+        <!-- Tarjeta con datos -->
+        <div class="caratula-card">
+            <p class="anio">AÑO DE LA RECUPERACIÓN Y CONSOLIDACIÓN DE LA ECONOMÍA PERUANA</p>
+            <p><b>Nombre:</b> Carmela Jhoanna Martel Pascual</p>
+            <p><b>Curso:</b> Informática 2</p>
+            <p><b>Docente:</b> Luis Honorato Pita Astengo</p>
+            <p><b>Ciclo:</b> 2do Ciclo</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Presentación del portal -->
+    <section class="box">
+        <h2>PRESENTACIÓN</h2>
+        <p>
+            El presente portal web temático forma parte del trabajo de Investigación Formativa del curso de
+            Informática 2. El tema elegido es el
+            <b>Campeonato Mundial de League of Legends 2025 (Worlds 2025)</b>, uno de los eventos de
+            deportes electrónicos más importantes a nivel mundial.
+        </p>
+        <br>
+        <p>
+            A través de las distintas páginas del sitio se presenta una descripción general del torneo,
+            sus fases competitivas, los equipos participantes, momentos destacados, así como una sección
+            dedicada a las fuentes bibliográficas utilizadas.
+        </p>
+    </section>
+
+    <!-- Índice de contenidos / hipervínculos -->
+    <section class="box index-list">
+        <h2>ÍNDICE DE CONTENIDOS</h2>
+        <p>Desde esta página puedes acceder a todas las secciones del portal web temático:</p>
+        <ul>
+            <li><a href="../Principal/principal.html">Página principal del tema (Principal.html)</a></li>
+            <li><a href="../Contenido1/contenido1.html">Contenido 1 – Fase Suiza y formato del torneo</a></li>
+            <li><a href="../Contenido2/contenido2.html">Contenido 2 – Cuartos y Semifinales</a></li>
+            <li><a href="../Contenido3/contenido3.html">Contenido 3 – Gran Final y legado de T1</a></li>
+            <li><a href="../Fuentes/fuentes.html">Fuentes bibliográficas (Fuentes.html)</a></li>
+        </ul>
+    </section>
+
+    <!-- Navegación rápida -->
+    <div class="bottom-nav">
+        <a href="../Principal/principal.html">Ir a la página principal</a>
+        <a href="../Contenido1/contenido1.html">Comenzar por Contenido 1</a>
+    </div>
+</main>
+
+<footer>
+    Universidad Nacional de la Amazonía Peruana – FISI · Portal web temático: Mundial de League of Legends 2025
+</footer>
+
+</body>
+</html>

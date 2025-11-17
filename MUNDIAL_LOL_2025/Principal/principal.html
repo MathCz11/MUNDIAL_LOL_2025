@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Principal - Mundial de League of Legends 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../img/lol-worlds-1024x576.jpg.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fdfdff;
+
+    /* Degradado pastel + imagen Worlds */
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 243, 0.92) 0%,
+            rgba(213, 196, 255, 0.92) 40%,
+            rgba(199, 227, 255, 0.92) 100%
+        ),
+        url("../img/lol-worlds-1024x576.jpg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: soft-light;
+}
+
+
+        a {
+            color: #00d5ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ====== ENCABEZADO TIPO BANNER ====== */
+        .hero-main {
+            padding: 28px 18px 10px;
+        }
+
+        .hero-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .hero-logo {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 26px;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+        }
+
+        .hero-logo img {
+            display: block;
+            max-height: 130px;
+            width: auto;
+        }
+
+        .hero-title {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-title h1 {
+            font-size: clamp(2.5rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #ffd36a;               /* DORADO */
+            text-shadow: 0 4px 12px rgba(0,0,0,0.45);
+            margin-bottom: 6px;
+        }
+
+        .hero-title h2 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.06em;
+        }
+
+        .hero-sub {
+            margin-top: 6px;
+            font-size: 0.95rem;
+            color: #ffe6a6;
+        }
+
+        /* ====== CONTENEDOR PRINCIPAL (TARJETA) ====== */
+        .main-layout {
+            max-width: 1150px;
+            margin: 25px auto 50px;
+            padding: 0 18px 30px;
+        }
+
+        .main-card {
+            background: #241039;          /* morado oscuro */
+            border-radius: 26px;
+            border: 3px solid #f6d365;    /* borde dorado */
+            box-shadow: 0 20px 45px rgba(15, 5, 35, 0.85);
+            padding: 26px 30px 30px;
+            margin-bottom: 28px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            letter-spacing: 0.12em;
+            color: #ffd36a;
+        }
+
+        .section-header small {
+            display: block;
+            margin-top: 4px;
+            color: #b5a6ff;
+            font-size: 0.88rem;
+        }
+
+        .section-title-sm {
+            font-size: 1.25rem;
+            color: #41e3ff;
+            margin: 18px 0 10px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 0.98rem;
+            text-align: justify;
+            color: #f7f3ff;
+        }
+
+        /* ====== VIDEO ====== */
+        .video-wrapper {
+            margin: 18px 0 16px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid #f6d365;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.65);
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 360px;
+            border: none;
+        }
+
+        .video-caption {
+            text-align: center;
+            font-size: 0.92rem;
+            color: #b5a6ff;
+            margin-bottom: 6px;
+        }
+
+        /* ====== AUDIO INTRO ====== */
+        .audio-section {
+            margin-top: 10px;
+        }
+
+        .audio-wrapper {
+            margin-top: 6px;
+            border-radius: 16px;
+            background: #1b0c30;
+            padding: 10px 12px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.7);
+        }
+
+        .audio-wrapper audio {
+            width: 100%;
+        }
+
+        /* ====== TABLAS ====== */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+            font-size: 0.96rem;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 10px 12px;
+        }
+
+        .info-table thead {
+            background: #2e1748;
+        }
+
+        .info-table thead th {
+            color: #ffd36a;
+            text-align: left;
+        }
+
+        .info-table tbody tr:nth-child(odd) {
+            background: #1b0c30;
+        }
+
+        .info-table tbody tr:nth-child(even) {
+            background: #251239;
+        }
+
+        /* ====== LISTAS ====== */
+        ul.custom-list {
+            list-style: none;
+            margin: 8px 0 0;
+            padding-left: 0;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 20px;
+            margin: 4px 0;
+        }
+
+        ul.custom-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ffd36a;
+            font-size: 0.75rem;
+            margin-top: 3px;
+        }
+
+        /* ====== ÍNDICE DE CONTENIDOS ====== */
+        .index-text p {
+            margin-bottom: 10px;
+        }
+
+        .index-text b {
+            color: #ffd36a;
+        }
+
+        .index-text a {
+            color: #00e5ff;
+            font-weight: 600;
+        }
+
+        /* ====== FOOTER INSTITUCIONAL ====== */
+        .footer-card {
+            text-align: center;
+            font-size: 0.92rem;
+        }
+
+        .footer-card p {
+            text-align: center;
+            margin: 4px 0;
+        }
+
+        .footer-card .uni {
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        .footer-card .autor {
+            color: #ffd36a;
+            font-weight: 600;
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 900px) {
+            .hero-inner {
+                flex-direction: column;
+            }
+
+            .hero-logo img {
+                max-height: 110px;
+            }
+
+            .video-wrapper iframe {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ENCABEZADO PRINCIPAL -->
+<header class="hero-main">
+    <div class="hero-inner">
+        <!-- Logo UNAP -->
+        <div class="hero-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3po4KndLz0oS66XoEng02vF95g3ccdjH-og&s"
+                 alt="Logo UNAP">
+        </div>
+
+        <!-- Título central -->
+        <div class="hero-title">
+            <h1>🏆 Mundial de League of Legends 2025 🏆</h1>
+            <h2>Página principal del tema</h2>
+            <div class="hero-sub">
+                Trabajo de Investigación Formativa – Portal web temático
+            </div>
+        </div>
+
+        <!-- Logo FISI UNAP -->
+        <div class="hero-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP-2WbjtxGKsN98B_50A8r_Q0xotUdOh2DFQ&s"
+                 alt="Logo FISI UNAP">
+        </div>
+    </div>
+</header>
+
+<!-- CONTENIDO EN TARJETA MORADA -->
+<main class="main-layout">
+
+    <!-- INTRO + VIDEO + DATOS -->
+    <section class="main-card">
+        <div class="section-header">
+            <h2>🎮 INTRODUCCIÓN AL MUNDIAL 2025</h2>
+            <small>Descripción general del torneo y contexto del tema</small>
+        </div>
+
+        <div class="video-wrapper">
+            <!-- Video explicación del formato (puedes cambiar el enlace si deseas otro) -->
+            <iframe src="https://www.youtube.com/embed/gwSdWVN-Ffg"
+                    title="Explicación del formato de Worlds 2025 | League of Legends"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">
+            🎬 Explicación del formato del Mundial 2025
+        </p>
+
+        <!-- AUDIO INTRODUCTORIO -->
+        <section class="audio-section">
+            <h3 class="section-title-sm">🔊 Audio introductorio</h3>
+            <p>
+            Te presento la canción oficial del WORLDS 2025.
+            </p>
+            <div class="audio-wrapper">
+                <audio controls>
+                    <source src="../audio/intro.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+        </section>
+
+        <p>
+            El <b>Campeonato Mundial de League of Legends 2025 (Worlds 2025)</b> fue la decimoquinta edición del
+            torneo profesional más importante de este videojuego. Los mejores equipos de todas las regiones
+            compitieron en China por el honor de levantar la <i>Summoner's Cup</i> y convertirse en campeones del mundo.
+        </p>
+        <br>
+        <p>
+            El torneo se desarrolló en varias fases: <b>Play-In</b>, <b>Fase Suiza</b>, eliminatorias directas
+            (cuartos de final y semifinales) y una emocionante <b>Gran Final entre T1 y KT Rolster</b>. Worlds 2025
+            destacó también por implementar de forma oficial el sistema de <b>Fearless Draft</b>, que obligó a los
+            equipos a utilizar una gran variedad de campeones a lo largo de las series.
+        </p>
+
+        <h3 class="section-title-sm">📊 Datos generales del torneo</h3>
+        <table class="info-table">
+            <thead>
+            <tr>
+                <th>Aspecto</th>
+                <th>Detalle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Fechas</td>
+                <td>14 de octubre al 9 de noviembre de 2025</td>
+            </tr>
+            <tr>
+                <td>Equipos participantes</td>
+                <td>17 equipos de las principales ligas profesionales</td>
+            </tr>
+            <tr>
+                <td>Prize Pool</td>
+                <td>$5,000,000 USD</td>
+            </tr>
+            <tr>
+                <td>Formato</td>
+                <td>Play-In, Fase Suiza, Playoffs al mejor de cinco (Bo5) y Gran Final</td>
+            </tr>
+            <tr>
+                <td>Sede</td>
+                <td>China (Beijing, Shanghai y Chengdu)</td>
+            </tr>
+            <tr>
+                <td>Campeón</td>
+                <td>T1 – tercer título mundial consecutivo</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3 class="section-title-sm">✨ Innovación: Fearless Draft</h3>
+        <p>
+            Worlds 2025 introdujo el revolucionario sistema <b>Fearless Draft</b>, que cambió completamente la forma
+            de jugar series al mejor de cinco:
+        </p>
+        <ul class="custom-list">
+            <li>Los campeones usados en una partida quedan bloqueados para el resto de la serie.</li>
+            <li>La restricción aplica para ambos equipos, sin importar quién utilizó el campeón.</li>
+            <li>Incrementa la importancia del <i>champion pool</i> de cada jugador.</li>
+            <li>Genera mayor variedad estratégica y un meta más dinámico.</li>
+        </ul>
+    </section>
+
+    <!-- ÍNDICE DEL TEMA / LINKS A OTRAS PÁGINAS -->
+    <section class="main-card index-text">
+        <div class="section-header">
+            <h2>📚 ÍNDICE DE CONTENIDOS DEL TEMA</h2>
+            <small>Mapa de navegación hacia las páginas secundarias</small>
+        </div>
+
+        <p>
+            El desarrollo completo del <b>Mundial de League of Legends 2025</b> se organiza en las siguientes
+            páginas web, donde se profundiza en cada fase del torneo:
+        </p>
+        <br>
+        <p>
+            <b>Contenido 1 – Fase Suiza:</b> análisis del formato suizo, tabla de posiciones y desempeño
+            de los equipos. (<a href="../Contenido1/contenido1.html">Ir al Contenido 1</a>)
+        </p>
+        <p>
+            <b>Contenido 2 – Cuartos de final y Semifinales:</b> descripción de las series eliminatorias,
+            resultados y momentos clave. (<a href="../Contenido2/contenido2.html">Ir al Contenido 2</a>)
+        </p>
+        <p>
+            <b>Contenido 3 – Gran Final:</b> resumen de la final T1 vs KT Rolster, jugadas decisivas
+            y récords históricos. (<a href="../Contenido3/contenido3.html">Ir al Contenido 3</a>)
+        </p>
+        <p>
+            <b>Fuentes bibliográficas:</b> recopilación de sitios oficiales y artículos utilizados para la
+            investigación. (<a href="../Fuentes/fuentes.html">Ir a Fuentes</a>)
+        </p>
+        <br>
+        <p>
+            De esta manera, la página principal funciona como una introducción general y como un
+            <b>índice de navegación</b> hacia las páginas secundarias y la sección de fuentes, tal como solicita
+            la guía de Investigación Formativa.
+        </p>
+    </section>
+
+    <!-- PIE INSTITUCIONAL -->
+    <section class="main-card footer-card">
+        <p class="uni">Universidad Nacional de la Amazonía Peruana</p>
+        <p>Facultad de Ingeniería de Sistemas e Informática</p>
+        <p>Curso: Informática II – 2025</p>
+        <p class="autor">Desarrollado por: Carmela Jhoanna Martel Pascual</p>
+        <p>© 2025 · Proyecto de Investigación Formativa</p>
+    </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Contenido 1 – Fase Suiza del Mundial 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS general externo (sigue contando para la rúbrica del profe) -->
+    <link rel="stylesheet" href="../css/estilos.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="../img/lol-worlds-1024x576.jpg.jpg" />
+
+    <!-- Estilo específico para dar el look de la página “antigua” -->
+    <style>
+        /* ======== ESTILO TIPO “ANTIGUO” SOLO PARA ESTA PÁGINA ======== */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fdfdff;
+
+    /* Fondo pastel + imagen Worlds de fondo */
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 243, 0.92) 0%,
+            rgba(213, 196, 255, 0.92) 40%,
+            rgba(199, 227, 255, 0.92) 100%
+        ),
+        url("../img/lol-worlds-1024x576.jpg.jpg");
+
+    background-size: cover;          /* La imagen cubre toda la pantalla */
+    background-position: center;     /* Centrada */
+    background-repeat: no-repeat;
+    background-attachment: fixed;    /* Fondo fijo al hacer scroll */
+    background-blend-mode: soft-light; /* La imagen no tapa los colores de tus tarjetas */
+}
+
+
+        .old-main {
+            max-width: 1100px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+        }
+
+        .old-card {
+            background: #160b33;
+            border-radius: 32px;
+            border: 3px solid #f2c558;
+            box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55);
+            padding: 32px 34px 38px;
+        }
+
+        /* Cabecera dentro de la tarjeta */
+        .old-header-subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ffd978;
+            margin-bottom: 4px;
+        }
+
+        .old-header-title {
+            font-size: clamp(2rem, 3.3vw, 2.8rem);
+            font-weight: 800;
+            margin: 0 0 6px;
+        }
+
+        .old-header-desc {
+            margin: 0 0 18px;
+            color: #f4e8ff;
+        }
+
+        .old-nav-links {
+            margin-bottom: 24px;
+        }
+
+        .old-nav-links a {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #ffd978;
+            text-decoration: none;
+        }
+
+        .old-nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bloques/secciones internas tipo tarjetas rosas */
+        .old-section {
+            background: linear-gradient(135deg, #ff9ec4, #fdd3ff);
+            border-radius: 24px;
+            padding: 22px 24px 24px;
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+            color: #1b1025;
+            margin-bottom: 22px;
+        }
+
+        .old-section h2 {
+            margin: 0 0 14px;
+            text-align: center;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #ff3da6;
+        }
+
+        .old-section p {
+            margin: 0 0 10px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* Vídeo responsivo con borde dorado */
+        .video-wrapper {
+            margin-top: 12px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 3px solid #f2c558;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 360px;
+            display: block;
+        }
+
+        /* Tabla estilo oscuro dentro de la tarjeta rosa */
+        .table-wrapper {
+            margin-top: 10px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+        }
+
+        .table-wrapper table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #15102a;
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        .table-wrapper thead {
+            background: #241a4b;
+        }
+
+        .table-wrapper th,
+        .table-wrapper td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .table-wrapper th {
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .table-wrapper tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .table-wrapper tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Audio */
+        .audio-wrapper {
+            margin-top: 10px;
+            border-radius: 18px;
+            padding: 12px 14px;
+            background: #171322;
+        }
+
+        .audio-wrapper audio {
+            width: 100%;
+        }
+
+        /* Navegación inferior */
+        .old-bottom-nav {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .old-bottom-nav a {
+            display: inline-block;
+            margin: 4px 6px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff9ec4, #fdd3ff);
+            color: #2b1539;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+        }
+
+        .old-bottom-nav a:hover {
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        .site-footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #3c2956;
+            margin-bottom: 18px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .old-card {
+                padding: 24px 18px 28px;
+            }
+
+            .video-wrapper iframe {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body class="theme-antiguo">
+    <main class="old-main">
+        <section class="old-card">
+            <!-- CABECERA DE LA PÁGINA -->
+            <header>
+                <p class="old-header-subtitle">Mundial de League of Legends 2025</p>
+                <h1 class="old-header-title">Contenido 1 – Fase Suiza del Mundial 2025</h1>
+                <p class="old-header-desc">
+                    Panorama general de la Fase Suiza, el nuevo formato competitivo del torneo.
+                </p>
+
+                <nav class="old-nav-links">
+                    <a href="../Presentacion/presentacion.html">Presentación</a>
+                    <a href="../Principal/principal.html">Página principal</a>
+                    <a href="../Contenido1/contenido1.html"><b>Contenido 1</b></a>
+                    <a href="../Contenido2/contenido2.html">Contenido 2</a>
+                    <a href="../Contenido3/contenido3.html">Contenido 3</a>
+                    <a href="../Fuentes/fuentes.html">Fuentes</a>
+                </nav>
+            </header>
+
+            <!-- SECCIÓN: VIDEO -->
+            <section class="old-section">
+                <h2>🎮 Video: Formato y explicación de la Fase Suiza</h2>
+                <p>
+                    Este video explica cómo funciona el formato del Mundial 2025 y en especial la
+                    <b>Fase Suiza</b>, donde los equipos se enfrentan según sus resultados previos.
+                </p>
+
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/gwSdWVN-Ffg"
+                        title="Explicación del formato de Worlds 2025"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: DESCRIPCIÓN DE LA FASE SUIZA -->
+            <section class="old-section">
+                <h2>📌 ¿Qué es la Fase Suiza?</h2>
+                <p>
+                    La <b>Fase Suiza</b> reemplaza al antiguo sistema de grupos. Todos los equipos
+                    participantes se enfrentan en distintas rondas, donde los emparejamientos se
+                    determinan por el rendimiento: quienes ganan se cruzan con otros ganadores y
+                    quienes pierden con otros equipos en la misma situación.
+                </p>
+                <p>
+                    Cada equipo puede quedar eliminado tras acumular tres derrotas, o clasificar a
+                    la siguiente fase al conseguir tres victorias. De esta manera, cada partida tiene
+                    un impacto directo en el futuro del equipo dentro del torneo, lo que hace que la
+                    competencia sea mucho más intensa y emocionante.
+                </p>
+            </section>
+
+            <!-- SECCIÓN: TABLA DE EJEMPLO -->
+            <section class="old-section">
+                <h2>📊 Ejemplo de tabla de resultados en Fase Suiza</h2>
+                <p>
+                    La siguiente tabla es un ejemplo ilustrativo de cómo podrían verse los
+                    resultados de algunos equipos durante la fase suiza del Mundial 2025.
+                </p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Equipo</th>
+                                <th>Región</th>
+                                <th>Victorias</th>
+                                <th>Derrotas</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>T1</td>
+                                <td>LCK</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>Clasificado</td>
+                            </tr>
+                            <tr>
+                                <td>KT Rolster</td>
+                                <td>LCK</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>Clasificado</td>
+                            </tr>
+                            <tr>
+                                <td>JDG</td>
+                                <td>LPL</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>En juego</td>
+                            </tr>
+                            <tr>
+                                <td>FNATIC</td>
+                                <td>LEC</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>Eliminado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: AUDIO REAL DEL PROYECTO -->
+            <section class="old-section">
+                <h2>🎧 MUSICA RELACIONADA AL WORLDS</h2>
+                <p>
+                    Musica asociada a la Fase Suiza.
+                </p>
+
+                <div class="audio-wrapper">
+                    <audio controls>
+                        <source src="../audio/contenido1.mp3" type="audio/mpeg" />
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                </div>
+            </section>
+
+            <!-- NAV INFERIOR -->
+            <div class="old-bottom-nav">
+                <a href="../Principal/principal.html">⬅ Volver a la página principal</a>
+                <a href="../Contenido2/contenido2.html">Ir al Contenido 2 ➜</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        Universidad Nacional de la Amazonía Peruana · FISI ·
+        Portal web temático: Mundial de League of Legends 2025
+    </footer>
+</body>
+</html>
